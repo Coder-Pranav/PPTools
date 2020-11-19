@@ -1,0 +1,40 @@
+#! /Applications/Nuke10.5v2/Nuke10.5v2.app/Contents/MacOS/libnuke-10.5.2.dylib -nx
+version 10.5 v2
+Gizmo {
+ tile_color 0xff8b0aff
+ addUserKnob {20 User}
+ addUserKnob {12 point1}
+ addUserKnob {12 point2}
+ point2 {1920 1080}
+ addUserKnob {22 CropBaked l "Crop Baked" T "n = nuke.thisNode()\nn.end()\n\nx = n\['point1'].getValue()\[0]\ny = n\['point1'].getValue()\[1]\n\nr = n\['point2'].getValue()\[0]\nt = n\['point2'].getValue()\[1]\n\nsoftness = n\['softness'].getValue()\nreformat = n\['reformat'].getValue()\ncrop = n\['crop'].getValue()\n\n\ns =nuke.createNode('Crop')\n\nbv = \[x, y, r, t]\n\ns\['box'].setValue(bv)\n\ns\['softness'].setValue(softness)\ns\['reformat'].setValue(reformat)\ns\['crop'].setValue(crop)\n\nbv = \[x, y, r, t]\n\ns\['box'].setValue(bv)\n\ns\['softness'].setValue(softness)\ns\['reformat'].setValue(reformat)\ns\['crop'].setValue(crop)\n" +STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {14 softness R 0 100}
+ addUserKnob {6 reformat +STARTLINE}
+ reformat true
+ addUserKnob {6 intersect -STARTLINE}
+ addUserKnob {6 crop l "black outside" -STARTLINE}
+ crop true
+ addUserKnob {26 ""}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 0
+  ypos 173
+ }
+ Crop {
+  box {{PointToCrop1.point1.x} {PointToCrop1.point1.y} {PointToCrop1.point2.x} {PointToCrop1.point2.y}}
+  softness {{PointToCrop1.softness}}
+  reformat {{PointToCrop1.reformat}}
+  intersect {{PointToCrop1.intersect}}
+  crop {{PointToCrop1.crop}}
+  name Crop1
+  xpos 0
+  ypos 239
+ }
+ Output {
+  name Output1
+  xpos 0
+  ypos 399
+ }
+end_group

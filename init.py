@@ -1,0 +1,6 @@
+nuke.pluginAddPath('./advancedMerge')
+nuke.pluginAddPath('./gizmoAdder')
+nuke.pluginAddPath('./icons')
+nuke.pluginAddPath('./nukeFixer')
+nuke.pluginAddPath('./nukeSearcher')
+nuke.pluginAddPath('./gizmos')

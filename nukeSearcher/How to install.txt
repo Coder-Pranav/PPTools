@@ -1,0 +1,8 @@
+# --------------------------------------------------------------
+# How to install
+# --------------------------------------------------------------
+# Unzip NukeSearcher.zip and put "NukeSearcher" folder in .nuke folder
+# Add this to init.py in .nuke folder
+# nuke.pluginAddPath('./NukeSearcher')
+# open nuke
+# --------------------------------------------------------------
